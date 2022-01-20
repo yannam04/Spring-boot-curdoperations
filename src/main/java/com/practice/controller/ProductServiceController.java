@@ -22,19 +22,19 @@ public class ProductServiceController {
     public ResponseEntity<Object> getProduct() {
         return new ResponseEntity<>(productService.getProducts(), HttpStatus.OK);
     }
-    @RequestMapping(value="/products/{id}",method=RequestMethod.PUT)
-    public ResponseEntity<Object> updateProduct(@PathVariable("id") String id,@RequestBody Product product){
-        productService.updateProduct(id, product);
+    @PutMapping  (value="/products")
+    public ResponseEntity<Object> updateProduct(@RequestBody Product product){
+        productService.updateProduct(product);
         return new ResponseEntity<>("Product is updated successsfully", HttpStatus.OK);
 
 
     }
-    @RequestMapping(value="/products/{id}",method=RequestMethod.DELETE)
+    @DeleteMapping(value="/products/{id}")
     public ResponseEntity<Object> delete(@PathVariable("id") String id) {
         productService.deleteProduct(id);
         return new ResponseEntity<>("Product is delete successsfully", HttpStatus.OK);
     }
-    @RequestMapping(value="/products",method=RequestMethod.POST)
+    @PostMapping(value="/products")
     public ResponseEntity<Object> creteProduct(@RequestBody Product product) {
         productService.createProduct(product);
         return new ResponseEntity<>("Product is create successsfully", HttpStatus.CREATED);

@@ -29,11 +29,11 @@ public class ProductserviceImpl implements ProductService {
     @Override
     public void createProduct(Product product) {
         productRepo.put(product.getId(), product);
-    }
 
-    public void updateProduct(String id, Product product) {
+
+    /*public void updateProduct(String id, Product product) {
         productRepo.remove(id);
-        productRepo.put(id,product);
+        productRepo.put(id,product);*/
     }
 
     public void deleteProduct(String id) {
@@ -44,4 +44,14 @@ public class ProductserviceImpl implements ProductService {
     public Collection<Product> getProducts() {
         return productRepo.values();
     }
+
+    @Override
+    public void updateProduct(Product product) {
+        productRepo.put(product.getId(),product);
+    }
+
+
+   /* public void updateProduct(Product product,String id) {
+        productRepo.put(id,product);
+    }*/
 }
