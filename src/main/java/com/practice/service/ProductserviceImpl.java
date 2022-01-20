@@ -31,10 +31,7 @@ public class ProductserviceImpl implements ProductService {
         productRepo.put(product.getId(), product);
 
 
-    /*public void updateProduct(String id, Product product) {
-        productRepo.remove(id);
-        productRepo.put(id,product);*/
-    }
+
 
     public void deleteProduct(String id) {
         productRepo.remove(id);
@@ -51,7 +48,5 @@ public class ProductserviceImpl implements ProductService {
     }
 
 
-   /* public void updateProduct(Product product,String id) {
-        productRepo.put(id,product);
-    }*/
+
 }
