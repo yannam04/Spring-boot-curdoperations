@@ -29,6 +29,7 @@ public class ProductServiceController {
 
 
     }
+    //delete the product id
     @DeleteMapping(value="/products/{id}")
     public ResponseEntity<Object> delete(@PathVariable("id") String id) {
         productService.deleteProduct(id);
